@@ -1,20 +1,15 @@
-const map = new Map()
-
-map.set("red" , 100)
-map.set("blue", 200)
-
-console.log(map.get("red"))
-
-
-const nums = [3,5,9];
-
-
-const numMap = new Map();
-const numbers1 =  [8, 12, 20];
-
-for(let i = 0; i < numbers1.length; i++) {
-  numMap.set(numbers1[i], i);
-}
-
-console.log(numMap.get(20));
-
+var twoSum = function(nums, target) {
+    const map = new Map();
+  
+    for (let i = 0; i < nums.length; i++) {
+      const x = nums[i];
+      const need = target - x;
+  
+      if (map.has(need)) return [map.get(need), i];
+  
+      map.set(x, i);
+    }
+  };
+  
+  console.log(twoSum([2,7,11,15], 9)); // [0,1]
+  
