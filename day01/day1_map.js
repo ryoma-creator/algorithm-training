@@ -77,10 +77,118 @@
 
 // EN: Put numbers into Map while looping. Print Map each time.
 // JP: ループしながら Map に保存していき、毎回中身を表示。
+// const nums = [2, 7, 11, 15];
+// const map = new Map();
+
+// for (let i = 0; i < nums.length; i++) {
+//   map.set(nums[i], i);
+//   console.log(map);
+// }
+
+// EN: For each number, check if its partner exists in map.
+// JP: 各数字について、相方がmapにいるか確認。
+
+// const nums = [2,7,11,15];
+// const target =9;
+// const map =newMap();
+
+// EN: Given nums = [2,7,11,15], print all values.
+// JP: nums = [2,7,11,15] の値をすべて表示せよ。
+
+
 const nums = [2, 7, 11, 15];
+
+// for(let i = 0; i < nums.length; i++) {
+//   console.log(nums[i]);
+// }
+
+// EN: Given nums = [2,7,11,15], print "index:value".
+// JP: nums = [2,7,11,15] を "index:value" 形式で表示せよ。
+
+const map = new Map;
+
+for(let i = 0; i < nums.length; i++) {
+ console.log(`${i}:${nums[i]}`)
+}
+
+// EN: Given target=9 and x=2, compute need so that x + need = target.
+// JP: target=9 と x=2 のとき、x + need = target となる need を求めよ。
+
+const target = 9;
+const x = 2;
+
+const need = target - x;
+
+// EN: Create a Map and store (2->0), (7->1). Print index of 7.
+// JP: Mapを作り (2->0), (7->1) を保存し、7のindexを表示せよ。
+
 const map = new Map();
 
-for (let i = 0; i < nums.length; i++) {
-  map.set(nums[i], i);
-  console.log(map);
+map.set(2,0);
+map.set(7,1);
+console.log(map.get(7));
+
+
+// EN: Given nums=[2,7,11,15], store value->index into Map.
+//     Print index of 11.
+// JP: nums=[2,7,11,15] を使い、value->index をMapに保存し、
+//     11のindexを表示せよ。
+
+// for(let i = 0; i < nums.length; i++) {
+//   map.set(nums[i], i);
+// }
+// console.log(map.get(11));
+
+// EN: Given nums=[2,7,11,15], target=9,
+//     for each number, compute its partner need=target-number.
+// JP: nums=[2,7,11,15], target=9 のとき、
+//     各数字に対して need=target-数字 を計算せよ。
+
+// for(let i = 0; i < nums.length; i++) {
+//   need = target - nums[i];
+//   map.set(need, i);
+// }
+// console.log(map(need);
+        
+
+// EN:
+// You have a list of numbers.
+// You also have a target number.
+//
+// Find two different numbers in the list.
+// When you add them, they must equal the target.
+//
+// Return the positions of those two numbers.
+//
+// Example:
+// nums = [2,7,11,15]
+// target = 9
+// 2 + 7 = 9
+// → return [0,1]
+//
+// JP:
+// 数字のリストがある。
+// 目標の数字 target がある。
+//
+// リストの中から「2つの違う数字」を選ぶ。
+// その2つを足すと target になる。
+//
+// その2つが「何番目にあるか」を返せ。
+//
+// 例:
+// nums=[2,7,11,15]
+// target=9
+// 2と7で9になる
+// → 0番目と1番目 → [0,1]
+
+  
+for(let i = 0; i < nums.length; i++) {
+  const x = nums[i];
+  let need = target - x;
+  if(map.has(need)){
+    console.log(map.get(need), i);
+  }
+  map.set(nums[i],i);
 }
+console.log(map(need);
+      
